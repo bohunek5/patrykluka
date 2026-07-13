@@ -23,6 +23,13 @@ body {
   color: var(--text);
   line-height: 1.55;
 }
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+main, section, header, footer, form, article, aside, nav, div {
+  min-width: 0;
+}
 body.dark {
   color-scheme: dark;
   --bg: #071312;
@@ -525,6 +532,7 @@ input[type="checkbox"] {
   inset: auto 0 0;
   z-index: 55;
   grid-template-columns: repeat(5, 1fr);
+  width: 100%;
   background: var(--surface);
   border-top: 1px solid var(--border);
   box-shadow: 0 -10px 30px rgba(0,0,0,.12);
@@ -536,6 +544,9 @@ input[type="checkbox"] {
   font-size: .78rem;
   font-weight: 850;
   color: var(--soft-text);
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .bottom-nav a.active {
   color: var(--brand);
@@ -780,6 +791,8 @@ select {
   .desktop-nav { display: none; }
   .topbar {
     inset: 0 0 auto;
+    width: 100vw;
+    max-width: 100vw;
     height: 72px;
     border-radius: 0;
     border-inline: 0;
@@ -815,6 +828,37 @@ select {
   .section { padding: 4.5rem 1.1rem; }
   .report-main { padding: 6.5rem 1rem 4rem; }
   .quote-main { padding: 6.5rem 1rem 4rem; }
+  .report-main,
+  .quote-main,
+  .report-hero,
+  .quote-hero,
+  .quote-page-shell,
+  .report-shell,
+  .report-form,
+  .quote-form {
+    width: 100%;
+    max-width: 100%;
+  }
+  .report-hero h1,
+  .quote-hero h1 {
+    max-width: calc(100vw - 2rem);
+    font-size: clamp(2rem, 8.8vw, 2.7rem);
+    line-height: 1.02;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+  .report-hero p,
+  .quote-hero p {
+    overflow-wrap: anywhere;
+  }
+  .report-card,
+  .quote-form-wide,
+  .quote-contact-card,
+  .service-actions a,
+  .quote-notes article {
+    width: 100%;
+    max-width: 100%;
+  }
   .report-shell { grid-template-columns: 1fr; }
   .report-aside { position: static; }
   .report-options {
@@ -838,7 +882,18 @@ select {
   }
   .quote-hero-grid, .service-actions, .quote-notes { grid-template-columns: 1fr; }
   .quote-page-aside { position: static; }
-  .bottom-nav { display: grid; }
+  .bottom-nav {
+    display: grid;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    max-width: 100vw;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .bottom-nav a {
+    font-size: .72rem;
+    padding-inline: .15rem;
+  }
   body { padding-bottom: 64px; }
   .footer { flex-direction: column; padding-bottom: 6rem; }
 }
