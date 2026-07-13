@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101923">
+    <title>Szybkie zgłoszenie - Patryk Łuka Ubezpieczenia</title>
+    <meta name="description" content="Szybkie zgłoszenie szkody lub sprawy ubezpieczeniowej.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="subpage">
+    <a class="skip-link" href="#main">Przejdź do formularza</a>
+
+    <header class="topbar" aria-label="Główna nawigacja">
+      <a class="brand" href="index.html#start" aria-label="Strona główna Patryk Łuka Ubezpieczenia">
+        <span class="brand-mark" aria-hidden="true">PŁ</span>
+        <span>
+          <strong>PATRYK ŁUKA</strong>
+          <small>UBEZPIECZENIA</small>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="Menu główne">
+        <a href="index.html#oferta">Oferta</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="wycena.html">Wycena</a>
+        <a href="index.html#szkody">Szkody</a>
+        <a href="index.html#kontakt">Kontakt</a>
+      </nav>
+      <div class="top-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Przełącz tryb dzień noc" title="Tryb dzień/noc">☾</button>
+        <a class="secondary-btn small framed-action active-action" href="zgloszenie.html">Szybkie zgłoszenie</a>
+        <a class="primary-btn small" href="wycena.html">Wyceń polisę</a>
+      </div>
+    </header>
+
+    <main id="main" class="report-main">
+      <section class="report-hero">
+        <p class="eyebrow">Szybkie zgłoszenie</p>
+        <h1>Zgłoś szkodę lub sprawę ubezpieczeniową</h1>
+        <p>Wybierz typ sprawy, dodaj krótki opis i załącz zdjęcia. Formularz jest przygotowany pod dalsze podłączenie do e-maila, CRM lub panelu klienta.</p>
+      </section>
+
+      <section class="report-shell" aria-label="Formularz szybkiego zgłoszenia">
+        <form class="report-form">
+          <div class="report-card">
+            <span class="step-pill">1</span>
+            <h2>Typ zgłoszenia</h2>
+            <div class="report-options">
+              <label><input type="radio" name="case" value="auto"> <span>Szkoda komunikacyjna</span></label>
+              <label><input type="radio" name="case" value="home"> <span>Szkoda w domu</span></label>
+              <label><input type="radio" name="case" value="health"> <span>Zdrowie lub życie</span></label>
+              <label><input type="radio" name="case" value="business"> <span>Sprawa firmowa</span></label>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <span class="step-pill">2</span>
+            <h2>Dane zdarzenia</h2>
+            <div class="two-cols">
+              <label>Data zdarzenia <input type="date" name="date"></label>
+              <label>Miejsce <input name="place" placeholder="Adres lub miejscowość"></label>
+              <label>Numer polisy, jeśli jest <input name="policy" placeholder="Np. PL/123/2026"></label>
+              <label>Pilność <select name="priority"><option>Standardowa</option><option>Pilna</option><option>Potrzebna pomoc teraz</option></select></label>
+            </div>
+          </div>
+
+          <div class="report-card">
+            <span class="step-pill">3</span>
+            <h2>Opis i załączniki</h2>
+            <label>Co się stało?
+              <textarea rows="6" placeholder="Opisz krótko zdarzenie, uszkodzenia i czego oczekujesz."></textarea>
+            </label>
+            <label class="file-box compact-file">
+              <input type="file" multiple accept="image/*,.pdf">
+              <span>Dodaj zdjęcia lub dokumenty</span>
+            </label>
+          </div>
+
+          <div class="report-card">
+            <span class="step-pill">4</span>
+            <h2>Kontakt</h2>
+            <div class="two-cols">
+              <label>Imię i nazwisko <input autocomplete="name" required></label>
+              <label>Telefon lub e-mail <input autocomplete="email" required></label>
+            </div>
+            <label class="checkbox"><input type="checkbox" required> Zgadzam się na kontakt w sprawie zgłoszenia.</label>
+            <button class="primary-btn report-submit" type="button">Wyślij zgłoszenie</button>
+          </div>
+        </form>
+
+        <aside class="report-aside">
+          <h2>Co przygotować?</h2>
+          <ul>
+            <li>Zdjęcia szkody z kilku ujęć.</li>
+            <li>Numer polisy lub dane pojazdu/nieruchomości.</li>
+            <li>Datę i miejsce zdarzenia.</li>
+            <li>Krótki opis, kto uczestniczył i co zostało uszkodzone.</li>
+          </ul>
+          <a class="secondary-btn" href="index.html#szkody">Zobacz warianty szkód</a>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

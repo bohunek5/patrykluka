@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101923">
+    <title>Szybka wycena - Patryk Łuka Ubezpieczenia</title>
+    <meta name="description" content="Szybka wycena polisy ubezpieczeniowej krok po kroku.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="subpage">
+    <a class="skip-link" href="#main">Przejdź do formularza</a>
+
+    <header class="topbar" aria-label="Główna nawigacja">
+      <a class="brand" href="index.html#start" aria-label="Strona główna Patryk Łuka Ubezpieczenia">
+        <span class="brand-mark" aria-hidden="true">PŁ</span>
+        <span>
+          <strong>PATRYK ŁUKA</strong>
+          <small>UBEZPIECZENIA</small>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="Menu główne">
+        <a href="oferta.html">Oferta</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="wycena.html">Wycena</a>
+        <a href="szkody.html">Szkody</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+      <div class="top-actions">
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Przełącz tryb dzień noc" title="Tryb dzień/noc">☾</button>
+        <a class="secondary-btn small framed-action" href="zgloszenie.html">Szybkie zgłoszenie</a>
+        <a class="primary-btn small" href="wycena.html">Wyceń polisę</a>
+      </div>
+    </header>
+
+    <main id="main" class="quote-main">
+      <section class="quote-hero">
+        <p class="eyebrow">Szybka wycena</p>
+        <div class="quote-hero-grid">
+          <div>
+            <h1>Wycena polisy bez krążenia po formularzach</h1>
+            <p>Wybierz obszar ochrony, dopisz kilka konkretów i dodaj dokumenty, jeśli je masz. Formularz zbiera tylko dane potrzebne do przygotowania sensownej propozycji.</p>
+          </div>
+          <aside class="quote-contact-card">
+            <span>Patryk Łuka</span>
+            <strong>Spokój ma swoją polisę!</strong>
+            <p>Wycena, odnowienie, szkoda albo szybki kontakt z doradcą.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="service-actions" aria-label="Najważniejsze akcje">
+        <a href="#quote-form"><span>01</span><strong>Wycena polisy</strong><small>Auto, dom, życie, firma, podróż</small></a>
+        <a href="zgloszenie.html"><span>02</span><strong>Zgłoszenie szkody</strong><small>Zdjęcia, opis, dokumenty</small></a>
+        <a href="kontakt.html"><span>03</span><strong>Kontakt z doradcą</strong><small>Krótka rozmowa przed wyborem</small></a>
+      </section>
+
+      <section class="quote-page-shell">
+        <form id="quote-form" class="quote-form quote-form-wide" data-quote-form>
+          <div class="progress" aria-label="Postęp formularza"><span data-progress-bar></span></div>
+          <div class="step active" data-step="1">
+            <h2>Co chcesz ubezpieczyć?</h2>
+            <div class="choice-grid">
+              <label><input type="radio" name="type" value="auto"> <span><strong>Auto</strong><small>OC, AC, assistance</small></span></label>
+              <label><input type="radio" name="type" value="dom"> <span><strong>Dom</strong><small>Mieszkanie, dom, majątek</small></span></label>
+              <label><input type="radio" name="type" value="zycie"> <span><strong>Życie</strong><small>Rodzina, zdrowie, kredyt</small></span></label>
+              <label><input type="radio" name="type" value="firma"> <span><strong>Firma</strong><small>OC, lokal, sprzęt</small></span></label>
+              <label><input type="radio" name="type" value="podroz"> <span><strong>Podróż</strong><small>Wyjazd, bagaż, sport</small></span></label>
+              <label><input type="radio" name="type" value="szkoda"> <span><strong>Szkoda</strong><small>Zdjęcia, opis, dokumenty</small></span></label>
+            </div>
+          </div>
+          <div class="step" data-step="2">
+            <h2 data-dynamic-title>Dane do wyceny</h2>
+            <div class="dynamic-fields" data-dynamic-fields></div>
+          </div>
+          <div class="step" data-step="3">
+            <h2>Zdjęcia i opis</h2>
+            <label class="file-box">
+              <input type="file" name="photos" multiple accept="image/*,.pdf">
+              <span>Dodaj zdjęcia, polisę lub dokument PDF</span>
+            </label>
+            <label>Opis sytuacji
+              <textarea name="description" rows="5" placeholder="Napisz, co jest najważniejsze: termin, wartość, szkoda, oczekiwany kontakt."></textarea>
+            </label>
+            <div class="two-cols">
+              <label>Imię i nazwisko <input name="name" autocomplete="name" required></label>
+              <label>Telefon lub e-mail <input name="contact" autocomplete="email" required></label>
+            </div>
+            <label class="checkbox"><input type="checkbox" required> Zgadzam się na kontakt w sprawie wyceny.</label>
+          </div>
+          <div class="form-actions">
+            <button class="secondary-btn" type="button" data-prev disabled>Wstecz</button>
+            <button class="primary-btn" type="button" data-next>Dalej</button>
+            <button class="primary-btn hidden" type="submit" data-submit>Wyślij</button>
+          </div>
+          <p class="form-status" role="status" data-form-status></p>
+        </form>
+      </section>
+
+      <section class="quote-notes" aria-label="Co dzieje się po formularzu">
+        <article><span>Przygotuj</span><strong>Obecną polisę lub podstawowe dane</strong><p>Wystarczy numer rejestracyjny, adres nieruchomości albo opis potrzeby.</p></article>
+        <article><span>Po wysłaniu</span><strong>Porównanie wariantów</strong><p>Zakres, cena, wyłączenia i rekomendowany wariant bez żargonu.</p></article>
+        <article><span>Dalej</span><strong>Oferta i kontakt</strong><p>Klient dostaje jasną propozycję oraz następny krok do zawarcia polisy.</p></article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
