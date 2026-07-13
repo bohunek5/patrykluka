@@ -1033,3 +1033,49 @@ select {
   .brand small { letter-spacing: .2em; font-size: .55rem; }
   .section h2 { font-size: 2rem; }
 }
+
+body.dark .primary-btn,
+body.dark .secondary-btn,
+body.dark .framed-action,
+body.dark .icon-btn,
+body.dark .hero-scroll b,
+body.dark .desktop-nav a,
+body.dark .app-strip a,
+body.dark .bottom-nav,
+body.dark .bottom-nav a,
+body.dark .trust-list li,
+body.dark .offer-card,
+body.dark .damage-grid article,
+body.dark .portfolio-grid article,
+body.dark .contact-card,
+body.dark .quote-form,
+body.dark .quote-help,
+body.dark .chat-box,
+body.dark .quote-contact-card,
+body.dark .service-actions a,
+body.dark .quote-notes article,
+body.dark .report-card,
+body.dark .report-aside {
+  box-shadow: none !important;
+}
+
+body.dark .primary-btn,
+body.dark .hero-scroll b {
+  background: #c8922d;
+  border-color: #d7a13a;
+  text-shadow: none;
+}
+
+body.dark .secondary-btn,
+body.dark .framed-action,
+body.dark .desktop-nav a,
+body.dark .app-strip a,
+body.dark .trust-list li {
+  background: #101923;
+  border-color: #344252;
+}
+
+body.dark .bottom-nav {
+  background: #101923;
+  border-color: #344252;
+}
