@@ -150,7 +150,7 @@ button { cursor: pointer; }
   min-height: 52px;
   display: grid;
   place-items: center;
-  padding: .55rem .98rem;
+  padding: .55rem .82rem;
   border: 1px solid color-mix(in srgb, var(--brand-2) 24%, var(--border));
   border-radius: var(--radius);
   background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 90%, #fff), color-mix(in srgb, var(--surface) 82%, var(--brand)));
@@ -160,7 +160,7 @@ button { cursor: pointer; }
     0 1px 0 rgba(255,255,255,.38);
   color: var(--soft-text);
   font-weight: 760;
-  font-size: .96rem;
+  font-size: .92rem;
 }
 .desktop-nav a:hover {
   border-color: color-mix(in srgb, var(--brand-2) 45%, var(--border));
@@ -644,7 +644,11 @@ input[type="checkbox"] {
 }
 .report-hero {
   max-width: 980px;
+  min-height: 300px;
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .report-hero h1 {
   margin: 0;
@@ -656,13 +660,18 @@ input[type="checkbox"] {
 }
 .report-hero p:not(.eyebrow) {
   max-width: 760px;
+  min-height: 3.8rem;
   color: var(--soft-text);
   font-size: 1.12rem;
 }
 .quote-hero {
   max-width: 1180px;
+  min-height: 300px;
   margin-inline: auto;
   padding: .75rem 0 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .quote-hero-grid {
   display: grid;
@@ -679,6 +688,7 @@ input[type="checkbox"] {
 }
 .quote-hero p {
   max-width: 760px;
+  min-height: 3.8rem;
   color: var(--soft-text);
   font-size: 1.08rem;
 }
@@ -975,6 +985,7 @@ select {
   }
   .report-hero p,
   .quote-hero p {
+    min-height: 0;
     overflow-wrap: anywhere;
   }
   .report-card,
@@ -1018,7 +1029,7 @@ select {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
   .bottom-nav a {
-    font-size: .72rem;
+    font-size: .68rem;
     padding-inline: .15rem;
   }
   body { padding-bottom: 64px; }

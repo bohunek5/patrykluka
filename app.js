@@ -3,7 +3,7 @@ const mobileNavItems = [
   ["Start", "index.html"],
   ["Oferta", "oferta.html"],
   ["Wycena", "wycena.html"],
-  ["Szkody", "szkody.html"],
+  ["Rezerwacja", "rezerwacja.html"],
   ["Kontakt", "kontakt.html"]
 ];
 
