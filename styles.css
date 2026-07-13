@@ -456,6 +456,14 @@ input, textarea {
   border-radius: var(--radius);
   padding: .95rem 1rem;
 }
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  min-width: 18px;
+  height: 18px;
+  padding: 0;
+  flex: 0 0 auto;
+}
 .dynamic-fields, .two-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -714,7 +722,8 @@ input, textarea {
 }
 .report-options label {
   min-height: 76px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
   align-items: center;
   gap: .7rem;
   padding: 1rem;
@@ -722,6 +731,16 @@ input, textarea {
   border-radius: var(--radius);
   background: var(--muted);
   color: var(--text);
+  overflow: hidden;
+}
+.report-options label span {
+  min-width: 0;
+  display: block;
+  overflow-wrap: anywhere;
+  line-height: 1.2;
+}
+.report-options input[type="radio"] {
+  justify-self: start;
 }
 .compact-file {
   min-height: 96px;
@@ -798,7 +817,14 @@ select {
   .quote-main { padding: 6.5rem 1rem 4rem; }
   .report-shell { grid-template-columns: 1fr; }
   .report-aside { position: static; }
-  .report-options { grid-template-columns: 1fr; }
+  .report-options {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+  .report-options label {
+    min-height: 64px;
+    padding: .9rem;
+  }
   .choice-grid, .dynamic-fields, .two-cols { grid-template-columns: 1fr; }
   .form-actions {
     display: grid;
