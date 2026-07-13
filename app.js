@@ -7,6 +7,33 @@ const mobileNavItems = [
   ["Kontakt", "kontakt.html"]
 ];
 
+function ensureFooter() {
+  if (document.querySelector(".footer")) return;
+  const footer = document.createElement("footer");
+  footer.className = "footer";
+  footer.innerHTML = `
+    <div class="footer-brand">
+      <span class="footer-mark" aria-hidden="true">PŁ</span>
+      <div>
+        <strong>PATRYK ŁUKA</strong>
+        <p>Spokój ma swoją polisę!</p>
+      </div>
+    </div>
+    <nav class="footer-links" aria-label="Linki w stopce">
+      <a href="oferta.html">Oferta</a>
+      <a href="wycena.html">Wycena</a>
+      <a href="rezerwacja.html">Rezerwacja</a>
+      <a href="zgloszenie.html">Szybkie zgłoszenie</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="footer-note">
+      <span>Ubezpieczenia osobowe, komunikacyjne, majątkowe i firmowe.</span>
+      <small>Szybka wycena, zgłoszenie szkody i kontakt z doradcą w jednym miejscu.</small>
+    </div>
+  `;
+  document.body.insertBefore(footer, document.querySelector("script"));
+}
+
 function ensureBottomNav() {
   let nav = document.querySelector(".bottom-nav");
   const current = location.pathname.split("/").pop() || "index.html";
@@ -24,6 +51,7 @@ function ensureBottomNav() {
   });
 }
 
+ensureFooter();
 ensureBottomNav();
 
 const quoteForm = document.querySelector("[data-quote-form]");
@@ -111,6 +139,9 @@ function setStep(step) {
   nextBtn.classList.toggle("hidden", currentStep === 3);
   submitBtn.classList.toggle("hidden", currentStep !== 3);
   progressBar.style.width = `${currentStep * 33.333}%`;
+  if (quoteForm && window.matchMedia("(max-width: 980px)").matches) {
+    quoteForm.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 nextBtn?.addEventListener("click", () => {
@@ -138,6 +169,13 @@ quoteForm?.addEventListener("submit", (event) => {
 document.querySelector("[data-theme-toggle]")?.addEventListener("click", () => {
   body.classList.toggle("dark");
   localStorage.setItem("sp-theme", body.classList.contains("dark") ? "dark" : "light");
+});
+
+document.querySelectorAll("[data-scroll-top]").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 });
 
 if (localStorage.getItem("sp-theme") === "dark") body.classList.add("dark");

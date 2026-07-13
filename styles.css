@@ -61,7 +61,7 @@ body.reduce-motion *, body.reduce-motion *::before, body.reduce-motion *::after 
   scroll-behavior: auto !important;
 }
 a { color: inherit; text-decoration: none; }
-button, input, textarea { font: inherit; }
+button, input, textarea { font: inherit; min-width: 0; }
 button { cursor: pointer; }
 :focus-visible { outline: 3px solid var(--brand-2); outline-offset: 3px; }
 .skip-link {
@@ -435,6 +435,7 @@ body.dark .primary-btn, body.contrast .primary-btn { color: #fff; }
   margin: 0 auto;
 }
 .quote-form-wide {
+  scroll-margin-top: 112px;
   padding: 2.25rem;
   border-color: color-mix(in srgb, var(--brand-2) 24%, var(--border));
 }
@@ -623,15 +624,61 @@ input[type="checkbox"] {
   background: var(--accent);
 }
 .footer {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(260px, .9fr) 1.3fr minmax(260px, .8fr);
+  align-items: center;
   gap: 2rem;
-  padding: 2rem 6vw 7rem;
+  padding: 2.4rem 6vw 7rem;
   background: #101923;
   color: #f4fbf8;
+  border-top: 1px solid rgba(200,146,45,.32);
 }
-.footer nav { display: flex; flex-wrap: wrap; gap: 1rem; }
-.footer p { color: #b9c9c5; margin: .25rem 0 0; }
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+}
+.footer-mark {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #050b10;
+  border: 1px solid rgba(200,146,45,.72);
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 900;
+}
+.footer-brand strong {
+  display: block;
+  color: var(--brand-2);
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: .12em;
+}
+.footer p { color: #dbe2ea; margin: .25rem 0 0; }
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .55rem;
+}
+.footer-links a {
+  padding: .65rem .8rem;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: var(--radius);
+  color: #eef4f7;
+  background: rgba(255,255,255,.035);
+  font-weight: 800;
+}
+.footer-note {
+  display: grid;
+  gap: .35rem;
+  color: #dbe2ea;
+}
+.footer-note small {
+  color: #9ca8b4;
+}
 .subpage {
   background: var(--bg);
 }
@@ -1007,11 +1054,18 @@ select {
     padding: .9rem;
   }
   .choice-grid, .dynamic-fields, .two-cols { grid-template-columns: 1fr; }
+  .quote-form-wide {
+    padding: 1.35rem 1rem 1.75rem;
+  }
+  .dynamic-fields {
+    row-gap: 1.1rem;
+  }
   .form-actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: .75rem;
-    margin-top: 1.5rem;
+    margin-top: 1.9rem;
+    padding-top: 1.35rem;
   }
   .form-actions .secondary-btn,
   .form-actions .primary-btn {
@@ -1033,7 +1087,14 @@ select {
     padding-inline: .15rem;
   }
   body { padding-bottom: 64px; }
-  .footer { flex-direction: column; padding-bottom: 6rem; }
+  .footer {
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding: 2rem 1rem 6rem;
+  }
+  .footer-links {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 430px) {
@@ -1049,6 +1110,9 @@ body.dark .primary-btn,
 body.dark .secondary-btn,
 body.dark .framed-action,
 body.dark .icon-btn,
+body.dark .topbar,
+body.dark .brand,
+body.dark .brand-mark,
 body.dark .hero-scroll b,
 body.dark .desktop-nav a,
 body.dark .app-strip a,
@@ -1066,7 +1130,8 @@ body.dark .quote-contact-card,
 body.dark .service-actions a,
 body.dark .quote-notes article,
 body.dark .report-card,
-body.dark .report-aside {
+body.dark .report-aside,
+body.dark .footer-links a {
   box-shadow: none !important;
 }
 
@@ -1079,6 +1144,8 @@ body.dark .hero-scroll b {
 
 body.dark .secondary-btn,
 body.dark .framed-action,
+body.dark .topbar,
+body.dark .brand,
 body.dark .desktop-nav a,
 body.dark .app-strip a,
 body.dark .trust-list li {
@@ -1086,7 +1153,22 @@ body.dark .trust-list li {
   border-color: #344252;
 }
 
+body.dark .brand-mark {
+  background: #071312;
+  border-color: #d7a13a;
+}
+
 body.dark .bottom-nav {
+  background: #101923;
+  border-color: #344252;
+}
+
+body.dark .footer {
+  background: #071312;
+  border-color: #344252;
+}
+
+body.dark .footer-links a {
   background: #101923;
   border-color: #344252;
 }
