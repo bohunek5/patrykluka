@@ -1080,7 +1080,7 @@ select {
     width: min(100dvw, 390px);
     max-width: min(100dvw, 390px);
     transform: none;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .bottom-nav a {
     font-size: .68rem;

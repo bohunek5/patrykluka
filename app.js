@@ -2,7 +2,6 @@ const body = document.body;
 const mobileNavItems = [
   ["Start", "index.html"],
   ["Oferta", "oferta.html"],
-  ["Wycena", "wycena.html"],
   ["Rezerwacja", "rezerwacja.html"],
   ["Kontakt", "kontakt.html"]
 ];
@@ -21,7 +20,6 @@ function ensureFooter() {
     </div>
     <nav class="footer-links" aria-label="Linki w stopce">
       <a href="oferta.html">Oferta</a>
-      <a href="wycena.html">Wycena</a>
       <a href="rezerwacja.html">Rezerwacja</a>
       <a href="zgloszenie.html">Szybkie zgłoszenie</a>
       <a href="kontakt.html">Kontakt</a>
